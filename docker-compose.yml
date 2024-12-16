@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  bot:
+    container_name: bot
+    build:
+      context: ./bot
+    volumes:
+      - ./bot:/usr/src/app/
+    command: python -m main
+    env_file: ./bot/.env
+    restart: always
